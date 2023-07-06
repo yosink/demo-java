@@ -1,13 +1,15 @@
+FROM bitnami/git AS codes
+WORKDIR /codes
+
+RUN git clone https://github.com/yosink/demo-java.git
+
 FROM maven:3.8-openjdk-17-slim AS builder
 LABEL stage=javabuilder
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-
-
-# RUN git config --global url."https://${GIT_USER}:${GIT_TOKEN}@github.com".insteadOf "https://github.com"
 
 WORKDIR /build
 
-COPY . .
+COPY --from=codes /codes/demo-java /build/
+
 RUN mvn clean package
 
 
