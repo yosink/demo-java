@@ -13,7 +13,7 @@ COPY --from=codes /codes/demo-java /build/
 RUN mvn clean package
 
 
-FROM openjdk:17-alpine
+FROM openjdk:11-ea-17-jre-slim
 WORKDIR /app
 COPY --from=builder /build/target/springboot-hello.jar /app/springboot-hello.jar
 
