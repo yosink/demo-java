@@ -78,13 +78,13 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>central</id>
+			<id>aliyun-central</id>
 			<url>https://maven.aliyun.com/repository/central</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 		<repository>
@@ -97,6 +97,17 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-
 	</repositories>
+	<pluginRepositories>
+			<pluginRepository>
+				<id>aliyun-central</id>
+				<url>https://maven.aliyun.com/repository/central</url>
+				<releases>
+					<enabled>true</enabled>
+				</releases>
+				<snapshots>
+					<enabled>false</enabled>
+				</snapshots>
+			</pluginRepository>
+		</pluginRepositories>
 </project>

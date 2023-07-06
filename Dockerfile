@@ -13,8 +13,7 @@ COPY --from=codes /codes/demo-java /build/
 RUN mvn clean package
 
 
-FROM openjdk:21-ea-17-jdk-slim-buster
-ENV TZ Asia/Shanghai
+FROM openjdk:17-alpine
 WORKDIR /app
 COPY --from=builder /build/target/springboot-hello.jar /app/springboot-hello.jar
 
